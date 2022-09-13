@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -16,19 +18,20 @@ html {
     background-size: cover;
     padding-left: 5%;
     padding-right: 5%;
-    box-sizing: border-box;
 }
 
 .navbar {
     height: 12%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    color:black
+    color:black;
 }
 
 nav {
     flex: 1;
     text-align: right;
+    user-select: none;
 }
   
 nav ul li {
@@ -40,19 +43,28 @@ nav ul li {
 }
   
 nav ul li a {
-    font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     text-decoration: none;
     color: black;
+    border-radius: 20px;
+}
+
+nav ul li a:hover{
+background: gray;
+color: whitesmoke;
 }
 
 .classLogo {
-    width: 150px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    pointer-events: none;
+    user-select: none;
+    font-weight: bold;
 }
 
 .row {
     color: black;
-    font-weight: bold;
     font-size: 20px;
     display: flex;
     position: absolute;
@@ -67,7 +79,6 @@ nav ul li a {
   
   /*Foucs on the design and position of the paragraph */
 .word {
-    font-weight: bold;
     font-size: 25px;
     flex-basis: 30%;
 }
@@ -78,7 +89,6 @@ nav ul li a {
     /*word color*/
     color: black;
     background: gray;
-    font-weight: bold;
     font-size: 20px;
     font-family: "Roboto", sans-serif;
     padding: 12px 0;
