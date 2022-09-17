@@ -9,7 +9,7 @@
 html {
     width: 100%;
     height: 100%;
-    background-image: url(HomeImage/Background.jpg);
+    background-image: url(HomeImage/pacman.jpg);
     /*There wont be any repeat for the background*/
     background-repeat: no-repeat;
     background-position: center;
@@ -21,11 +21,12 @@ html {
 }
 
 .navbar {
+    padding: 20px;
     height: 12%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:black;
+    color:white;
 }
 
 nav {
@@ -44,28 +45,33 @@ nav ul li {
   
 nav ul li a {
     font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: white;
     border-radius: 20px;
+    padding: 20px;
+    padding: 6px 15px;
 }
 
-nav ul li a:hover{
-background: gray;
-color: whitesmoke;
+nav ul li a:hover,
+nav ul li a#select{
+background: white;
+color: black;
 }
 
 .classLogo {
     font-size: 20px;
     text-decoration: none;
-    color: black;
+    color: white;
     pointer-events: none;
     user-select: none;
     font-weight: bold;
 }
 
 .row {
-    color: black;
+    color: white;
     font-size: 20px;
+    font-weight: bold;
     display: flex;
     position: absolute;
     /*bottom: 20%;*/
@@ -88,9 +94,9 @@ color: whitesmoke;
     width: 180px;
     /*word color*/
     color: black;
-    background: gray;
+    background: white;
     font-size: 20px;
-    font-family: "Roboto", sans-serif;
+    font-weight: bold;
     padding: 12px 0;
     border: 0;
     border-radius: 20px;
@@ -107,6 +113,5 @@ color: whitesmoke;
   
 .Memberbutton:hover {
     /*hover effect when going from left to right*/
-    box-shadow: inset 200px 0 0 0 whitesmoke;
+    box-shadow: inset 200px 0 0 0 white;
 }
-  
