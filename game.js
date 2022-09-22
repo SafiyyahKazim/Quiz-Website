@@ -4,7 +4,7 @@ const progressText=document.querySelector('#progressText');
 const scoreText=document.querySelector('#score');
 const progressBarFull=document.querySelector('#progressBarFull');
 
-let currentQuestion ={}
+let currentQuestion =[]
 let acceptingAnswers=true
 let score=0
 let questionCounter=0;
@@ -82,9 +82,7 @@ getNewQuestions= () => {
 
 choices.forEach(choice =>{
     choice.addEventListener('click', e =>{
-        if(!acceptingAnswers) return
-        
-        acceptingAnswers = false
+        if(!acceptingAnswers) return acceptingAnswers = false
             const selectedChoice = e.target
             const selectedAnswer= selectedChoice.dataset['number']
             
