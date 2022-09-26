@@ -1,48 +1,48 @@
 const question = document.querySelector('#question');
-const choices =Array.from(document.querySelectoAll('.choice-text'));
+const choices =Array.from(document.querySelectorAll('.choice-text'));
 const progressText=document.querySelector('#progressText');
 const scoreText=document.querySelector('#score');
 const progressBarFull=document.querySelector('#progressBarFull');
 
-let currentQuestion =[]
+let currentQuestion ={}
 let acceptingAnswers=true
 let score=0
-let questionCounter=0;
-let availableQuestions=[];
+let questionCounter=0
+let availableQuestions=[]
 
 let questions=[
     {
-        question:'Why do you want to learn to code?',
-        choice1:'professional developer',
-        choice2:'build something ',
-        choice3:'have another skill',
-        choice4:'for myself',
-        answer:2,
+        question:"Why do you want to learn to code?",
+        choice1:"professional developer",
+        choice2:"build something ",
+        choice3:"have another skill",
+        choice4:"for myself",
+        answer: 2,
     },
     {
-        question:'What kind of skill would you like with coding?',
-        choice1:'mobile/website development',
-        choice2:'data analysis',
-        choice3:'learn different programming languages',
-        choice4:'frameworks',
-        answer:2,
+        question:"What kind of skill would you like with coding?",
+        choice1:"mobile/website development",
+        choice2:"data analysis",
+        choice3:"learn different programming languages",
+        choice4:"frameworks",
+        answer: 2,
     },
     {
-        question:'What subject do yoy enjoy the most?',
-        choice1:'math',
-        choice2:'economy',
-        choice3:'art',
-        choice4:'science',
-        answer:4,
+        question:"What subject do you enjoy the most?",
+        choice1:"math",
+        choice2:"economy",
+        choice3:"art",
+        choice4:"science",
+        answer: 4,
     },
     {
-        question:'What kind of project would you be excited to build?',
-        choice1:'apps',
-        choice2:'websites ',
-        choice3:'data',
-        choice4:'software',
-        answer:'3',
-    },
+        question:"What kind of project would you be excited to build?",
+        choice1:"apps",
+        choice2:"websites ",
+        choice3:"data",
+        choice4:"software",
+        answer: 3,
+    }
 ]
 
 const SCORE_POINTS= 100
@@ -52,10 +52,10 @@ startGame= () => {
     questionCounter = 0
     score=0
     availableQuestions=[...questions]//array spread operator, get values from questions
-    getNewQuestions()
+    getNewQuestion()
 }
 
-getNewQuestions= () => {
+getNewQuestion= () => {
     if(availableQuestions.length===0||questionCounter>MAX_QUESTIONS){
         localStorage.setItem('mostRecentScore',score)
     
@@ -76,13 +76,15 @@ getNewQuestions= () => {
 
    availableQuestions.splice(questionsIndex,1)
 
-   acceptingAnswers = true;
+   acceptingAnswers = true
 
 }
 
 choices.forEach(choice =>{
     choice.addEventListener('click', e =>{
-        if(!acceptingAnswers) return acceptingAnswers = false
+        if(!acceptingAnswers) return 
+        
+            acceptingAnswers = false
             const selectedChoice = e.target
             const selectedAnswer= selectedChoice.dataset['number']
             
@@ -94,12 +96,19 @@ choices.forEach(choice =>{
             }
 
             selectedChoice.parentElement.classList.add(classToApply)
-
+            
             setTimeout(() =>{
             selectedChoice.parentElement.classList.remove(classToApply)
-            getNewQuestions()
-             } ,1000)
-
-            })
+            getNewQuestion()
             
+        } ,1000)
+
     })
+            
+})
+
+    incrementScore = num => { 
+        score +=num
+        scoreText.innerText = score
+    }
+  startGame()  
