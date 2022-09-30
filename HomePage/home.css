@@ -40,7 +40,7 @@ nav ul li {
     /*Make the choice from left to right*/
     display: inline-block;
     /*Put some space between them to the left*/
-    margin-left: 60px;
+    margin-left: 20px;
 }
   
 nav ul li a {
@@ -49,7 +49,6 @@ nav ul li a {
     text-decoration: none;
     color: white;
     border-radius: 20px;
-    padding: 20px;
     padding: 6px 15px;
 }
 
