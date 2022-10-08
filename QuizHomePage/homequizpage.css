@@ -54,8 +54,8 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a#select{
-background: white;
-color: black;
+    background: white;
+    color: black;
 }
 
 .classLogo {
@@ -76,7 +76,7 @@ color: black;
     position: absolute;
     /*bottom: 20%;*/
     /*margin-top: 150px;*/
-    width: 50%;;
+    width: 110%;;
     height: 80%;
     left: 8%;
     text-align: center;
@@ -87,4 +87,23 @@ color: black;
 .word {
     font-size: 25px;
     flex-basis: 30%;
+}
+
+.cardcol{ 
+   padding-left: 300px;
+}
+
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-color: aqua;
+    text-align: center;
+    align-items: center;
+    justify-content: right;
 }
