@@ -18,6 +18,8 @@ html {
     background-size: cover;
     padding-left: 5%;
     padding-right: 5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .navbar {
@@ -106,4 +108,27 @@ nav ul li a#select{
     text-align: center;
     align-items: center;
     justify-content: right;
+}
+
+
+.PlayButton{
+    width: 100px;
+    height: 50px;
+    /*word color*/
+    color: black;
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 0;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 20px;
+    cursor: pointer;
+    /*The hover effect when going back*/
+    box-shadow: inset 0 0 0 0 white;
+    /*the sliding affect*/
+    transition: ease-out 0.3s;
+    align-items: center;
+    justify-content: center;
 }
