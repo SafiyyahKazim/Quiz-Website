@@ -104,7 +104,6 @@ nav ul li a#select{
     box-sizing: border-box;
     cursor: pointer;
     margin: 10px 15px;
-    background-color: aqua;
     text-align: center;
     align-items: center;
     justify-content: right;
@@ -131,4 +130,19 @@ nav ul li a#select{
     transition: ease-out 0.3s;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+#card1{
+    background-image: url(/QuizHomePage/Image/4868336.png);   
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+#card2{
+    background-image: url(/QuizHomePage/Image/python.png);   
+    background-position: center;
+    background-size: cover;
+    color: white
 }
