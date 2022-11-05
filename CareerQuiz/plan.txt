@@ -1,0 +1,5 @@
+This quiz will not give a specific job but it will be in the field.
+Field like medical, enginner, business, art/music, etc.
+The player will be ask a question about the field and they have to pick hate, netural or like.
+hate is worth 0, netural is 0.5, and like is 1.
+When the test is done, the field with the most point will be the career.
