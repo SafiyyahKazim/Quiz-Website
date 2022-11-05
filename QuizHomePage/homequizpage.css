@@ -115,7 +115,7 @@ nav ul li a#select{
     height: 50px;
     /*word color*/
     color: black;
-    background: white;
+    background: yellow;
     font-size: 20px;
     font-weight: bold;
     padding: 12px 0;
@@ -137,7 +137,7 @@ nav ul li a#select{
     background-image: url(/QuizHomePage/Image/4868336.png);   
     background-position: center;
     background-size: cover;
-    color: white;
+    color: whites;
 }
 
 #card2{
@@ -145,4 +145,12 @@ nav ul li a#select{
     background-position: center;
     background-size: cover;
     color: white
+}
+
+.PlayButton:hover{
+    cursor: pointer;
+    background: yellow;
+    box-shadow: 0 0 5px yellow,
+                0 0 20px yellow,
+                0 0 60px yellow;
 }
