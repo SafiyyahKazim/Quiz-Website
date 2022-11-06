@@ -6,27 +6,22 @@
     box-sizing: border-box;
 }
 
-html {
-    width: 100%;
-    height: 100%;
-    background-image: url(HomeImage/pacman.jpg);
-    /*There wont be any repeat for the background*/
-    background-repeat: no-repeat;
-    background-position: center;
-    /*The background will stay in one place if we scroll*/
-    background-attachment: fixed;
-    background-size: cover;
-    padding-left: 5%;
-    padding-right: 5%;
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .navbar {
-    padding: 20px;
+    background-color: lightblue;
+    padding: 15px;
     height: 12%;
     display: flex;
     justify-content: center;
     align-items: center;
     color:white;
+    position: fixed;
+    list-style: none;
 }
 
 nav {
@@ -34,22 +29,20 @@ nav {
     text-align: right;
     user-select: none;
 }
-  
+
 nav ul li {
-    list-style: none;
     /*Make the choice from left to right*/
     display: inline-block;
     /*Put some space between them to the left*/
-    margin-left: 60px;
+    margin-left: 20px;
 }
-  
+
 nav ul li a {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     color: white;
     border-radius: 20px;
-    padding: 20px;
     padding: 6px 15px;
 }
 
@@ -68,29 +61,35 @@ color: black;
     font-weight: bold;
 }
 
-.row {
+section{
+    height: 100vh;
+    width: 100vw;
+}
+
+#section1{
+    background-image: url(/HomePage/HomeImage/pacman.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     color: white;
     font-size: 20px;
     font-weight: bold;
     display: flex;
-    position: absolute;
     /*bottom: 20%;*/
     /*margin-top: 150px;*/
-    width: 90%;;
-    height: 70%;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
-  
-  /*Foucs on the design and position of the paragraph */
-.word {
+
+.word1{
     font-size: 25px;
     flex-basis: 30%;
 }
-  
+
   /*The members button*/
-.Memberbutton {
+  .Memberbutton {
     width: 180px;
     /*word color*/
     color: black;
@@ -116,8 +115,6 @@ color: black;
     box-shadow: inset 200px 0 0 0 gray;
     color: white;
 }
-
-
 
 /*The actually box*/
 .memberBox {
@@ -168,3 +165,98 @@ color: black;
     align-items: center;
     text-align: center;
 }
+
+
+
+#section2{
+    background-image: url(/HomePage/HomeImage/HomeBluePrint.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    /*bottom: 20%;*/
+    /*margin-top: 150px;*/
+    left: 8%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.word2{
+    font-size: 30px;
+    flex-basis: 30%;
+}
+
+.cardcol{ 
+    padding-left: 140px;
+ }
+ 
+ .card{
+     width: 230px;
+     height: 250px;
+     display: inline-block;
+     border-radius: 10px;
+     padding: 15px 25px;
+     box-sizing: border-box;
+     cursor: pointer;
+     margin: 10px 15px;
+     text-align: center;
+     align-items: center;
+     justify-content: right;
+ }
+ 
+ 
+ .PlayButton{
+     width: 100px;
+     height: 50px;
+     /*word color*/
+     color: black;
+     background: yellow;
+     font-size: 20px;
+     font-weight: bold;
+     padding: 10px 0;
+     border: 0;
+     border-radius: 20px;
+     outline: none;
+     margin-top: 20px;
+     cursor: pointer;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+ }
+ 
+ #card1{
+    background-color: aqua;
+    /* background-image: url(/QuizHomePage/Image/4868336.png);   
+     background-position: center;
+     background-size: cover;*/
+     color: black;
+ }
+ 
+ #card2{
+    background-color: blueviolet;
+    /* background-image: url(/QuizHomePage/Image/python.png);   
+     background-position: center;
+     background-size: cover;*/
+     color: white;
+ }
+ 
+ #card3{
+    background-color: beige;
+     /*background-image: url(/QuizHomePage/Image/board-chalk-success-stairs.jpg);   
+     background-position: center;
+     background-size: cover;*/
+     color: yellow;
+ }
+ 
+ .PlayButton:hover{
+     cursor: pointer;
+     background: yellow;
+     box-shadow: 0 0 5px yellow,
+                 0 0 20px yellow,
+                 0 0 60px yellow;
+ }

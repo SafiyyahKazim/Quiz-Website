@@ -15,39 +15,75 @@
             <nav>
                 <ul>
                     <!--These are the button to another page-->
-                    <li><a href = "home.html" id = "select">Home</a></li>
-                    <li><a href = "/Quiz-App-Tutorial/QuizGame/index.html">Game</a></li>
+                    <li><a href = "#section1" id = "select">Home</a></li>
+                    <li><a href = "#section2">Game</a></li>
                     <li><a href = "">Report</a></li>
                     <li><a href = "">Login/Signup</a></li>
                 </ul>
             </nav>
         </div>
 
-        <!--Words in the middle of the page-->
-        <div class = "row">
-            <div class = "word">
-                <p>This is a project we created for our CISC 4900 course.
-                    This project contains many games that were created with 
-                    HTML, CSS, and Javascript.
-                </p>    
-                <button id = "button" class = "Memberbutton">Members</button>    
-            </div>
-        </div>
+       <div class = "row">
+            <section id = "section1">
+                <div class = "word1">
+                    <p>This is a project we created for our CISC 4900 course.
+                        This project contains many games that were created with 
+                        HTML, CSS, and Javascript.
+                    </p>    
+                    <button id = "button" class = "Memberbutton">Members</button>    
+                </div>
+                <div class = "memberBox">
+                    <div class = "memberContent"> 
+                        <h1>Members</h1>    
+                        <ul>
+                            <li>Quincy Millien</li>
+                            <li>Qi Da Chen</li>
+                            <li>Safiyyah Kazim</li>
+                            <li>Tony Li</li>
+                        </ul>       
+                        <button class = "memberClose">Close</button>
+                    </div>
+                </div>
+            </section> 
+            <section id = "section2">
+                <div class = "word2">
+                    <h1>Quiz Game</h1>
+                    <p>Here we have different kind fo quiz games. Just click on the card of the game you want to play.</p>    
+                </div>
+                
+                <div class = "cardcol">
+                    <div id = "card1" class = "card">
+                        <h5>Which Programming Language Is Right For Me?</h5>
+                        <a href = "/Quiz Game/game.html"><button class = "PlayButton">Play</button></a>
+                    </div>
+                    <div id = "card2" class = "card">
+                        <h5>Which Programming Language Is Right For Me?</h5>
+                        <a href = "/Quiz/Quiz.html"><button class = "PlayButton">Play</button></a>
+                    </div>
+                    <div id = "card3" class = "card">
+                        <h5>Which Career Path or Major Is Right <br> For Me?</h5>
+                        <a href = ""><button class = "PlayButton">Play</button></a>
+                    </div>
+                </div>
+            </section> 
 
-        <!--The member box for member button pop up-->
-        <div class = "memberBox">
-            <div class = "memberContent"> 
-                <h1>Members</h1>
-                      
-                <ul>
-                    <li>Qi Da Chen</li>
-                    <li>Quincy Millien</li>
-                    <li>Safiyyah Kazim</li>
-                    <li>Tony Li</li>
-                </ul>       
-                <button class = "memberClose">Close</button>
-            </div>
-        </div>
+
+
+
+
+
+
+       </div>
+        
+        
+        
+
+       
+        
+        
+
+
+        
 
     </body>
 
