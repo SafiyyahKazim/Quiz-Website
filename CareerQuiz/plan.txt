@@ -3,3 +3,31 @@ Field like medical, enginner, business, art/music, etc.
 The player will be ask a question about the field and they have to pick hate, netural or like.
 hate is worth 0, netural is 0.5, and like is 1.
 When the test is done, the field with the most point will be the career.
+
+Architecture, art/entertainment, business, communication, education, engineering/computer science, environment, government, medical
+, science field, social impact, law/public service
+
+1) Architecture
+    Architecture, interior designer, landscape Architecture, etc.
+2) Art/entertainment
+    Art education, museums, performing arts, etc
+3) business
+    accounting, real estate, insurance, etc
+4) communication
+    journalism, marketing, advertising, etc
+5) education 
+    teaching, school social worker, etc
+6) engineering and computer science
+    data science, aerospace, mechancial, etc
+7) environment
+    forestry, farmer, environment engineering, etc
+8) government
+    military, state offical, etc
+9) medical
+    doctor, nurse, etc
+10) science field
+    bio, physics
+11) social impact
+    civil and human rights, etc
+12) law/ public service
+    police, firefighter, etc
