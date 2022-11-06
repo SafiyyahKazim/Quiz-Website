@@ -31,3 +31,24 @@ Architecture, art/entertainment, business, communication, education, engineering
     civil and human rights, etc
 12) law/ public service
     police, firefighter, etc
+
+
+
+/--------------------------------------------------
+                    Question
+Key: +1 -> You mostlikely will
+     +0 -> right in between
+     -1 -> you would not
+/--------------------------------------------------
+1) Do you like working outdoor(in the sun or the cold) or indoor?
+    Choice: Outdoor, Indoor
+        result: outdoor -> Architecture(+1), art (+0), business(-1), communication(+0), education(-1), engineering(+0), environment(+1)
+                            , government(+0), medical(-1), science(+0), social(-1), law(+1)
+        result: Indoor -> Architecture(-1), art (+0), business(+1), communication(+0), education(+1), engineering(+0), environment(-1)
+                            , government(+0), medical(+1), science(-0), social(+1), law(-1)
+2) Are you scared of blood(like a lot of blood)?
+    Choice: Yes, no
+        result: Yes -> 
+3) Are you scared of heights?
+4) Do you like working with kids?
+5) What do you think about a office job?
