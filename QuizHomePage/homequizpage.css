@@ -84,6 +84,7 @@ nav ul li a#select{
     text-align: center;
     align-items: center;
     justify-content: left;
+    animation: fadeIn 3s;
 }
 
 .word {
@@ -137,3 +138,9 @@ nav ul li a#select{
                 0 0 20px yellow;
     transform: translateY(-10px);
 } 
+
+/*Keyframe for the fade in effect of words*/
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
