@@ -203,9 +203,3 @@ color: black;
     62% {transform:  translateX(50px);}
     100% {transform: translateX(0px);}
 }
-
-@keyframes memberBoxSlideAway{
-    0% {transform: translateX(0px);}
-    60% {transform: translateX(0px);}
-    100% {transform:  translateX(-500px);}
-}
