@@ -31,7 +31,7 @@ let questions=[
         question:"During program development, software requirements specify",
         choice1:"How the program will accomplish the task",
         choice2:"How to divide the task into subtask",
-        choice3:"How to test the prohram when it is done",
+        choice3:"How to test the program when it is done",
         choice4:"What the task is that program msut perform",
         answer: 4,
     },
