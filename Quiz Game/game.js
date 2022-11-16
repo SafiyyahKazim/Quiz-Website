@@ -12,40 +12,40 @@ let availableQuestions=[]
 
 let questions=[
     {
-        question:"Why do you want to learn to code?",
-        choice1:"professional developer",
-        choice2:"build something ",
-        choice3:"have another skill",
-        choice4:"for myself",
+        question:"_______ is the process of finding errors and fixing them within a program.",
+        choice1:"compiling",
+        choice2:"debugging",
+        choice3:"executing",
+        choice4:"scanning",
         answer: 2,
     },
     {
-        question:"What kind of skill would you like with coding?",
-        choice1:"mobile/website development",
-        choice2:"data analysis",
-        choice3:"learn different programming languages",
-        choice4:"frameworks",
-        answer: 2,
+        question:"A loop that never end is referred to as a(n)",
+        choice1:"infinite loop",
+        choice2:"while loop",
+        choice3:"for loop",
+        choice4:"recursive loop",
+        answer: 1,
     },
     {
-        question:"What subject do you enjoy the most?",
-        choice1:"math",
-        choice2:"economy",
-        choice3:"art",
-        choice4:"science",
+        question:"During program development, software requirements specify",
+        choice1:"How the program will accomplish the task",
+        choice2:"How to divide the task into subtask",
+        choice3:"How to test the prohram when it is done",
+        choice4:"What the task is that program msut perform",
         answer: 4,
     },
     {
-        question:"What kind of project would you be excited to build?",
-        choice1:"apps",
-        choice2:"websites ",
-        choice3:"data",
-        choice4:"software",
-        answer: 3,
+        question:"Jennie has just constructed her first for loop. Which of the following is not a required part of a for loop?",
+        choice1:"Initialization",
+        choice2:"Condition",
+        choice3:"Increment",
+        choice4:"Variable",
+        answer: 4,
     }
 ]
 
-const SCORE_POINTS= 100
+const SCORE_POINTS= 25
 const MAX_QUESTIONS = 4
 
 startGame= () => {
