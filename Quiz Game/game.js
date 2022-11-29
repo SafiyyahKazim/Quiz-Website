@@ -32,7 +32,7 @@ let questions=[
         choice1:"How the program will accomplish the task",
         choice2:"How to divide the task into subtask",
         choice3:"How to test the program when it is done",
-        choice4:"What the task is that program msut perform",
+        choice4:"What the task is that program must perform",
         answer: 4,
     },
     {
