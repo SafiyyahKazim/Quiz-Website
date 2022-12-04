@@ -1,12 +1,13 @@
-window.addEventListener('load', function() { //load faster
-const canvas = document.querySelector('canvas'); //game screen
+const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
+
 canvas.width = 1100;
 canvas.height = 600;
 
+c.fillRect(0, 0, canvas.width, canvas.height);
+
 class Sprite{
     floor = 0;
-    dead = 0;
     gravity = 0.2;
     idle = 0;
     isAttacking = false;
@@ -55,9 +56,7 @@ class Sprite{
                 break;
 
                 case this.movementKey.jump:
-                    if(this.position.y >= canvas.height - this.size.height) { //jump if sprite is on floor
-                        this.velocity.y = -this.stats.jump;
-                    }
+                    this.velocity.y = -this.stats.jump;
                 break;
 
                 case this.movementKey.attack: //attack key is pressed
@@ -79,6 +78,8 @@ class Sprite{
                 case this.movementKey.attack:
                     this.isAttacking = false;
                 break;
+
+
             }      
             console.log(event.key);
         }) 
@@ -114,10 +115,6 @@ class Sprite{
             this.isAttacking) {
                 console.log(this.stats.name + " hit " + Sprite.stats.name);
                 Sprite.stats.maxHp -= this.stats.attackDmg;
-                if(Sprite.stats.maxHp <= this.dead) { //force 0 hp because width can't go lower than 0
-                    Sprite.stats.maxHp = this.dead;
-                }
-                document.querySelector('#' + Sprite.stats.name).style.width = Sprite.stats.maxHp + '%';
                 console.log(Sprite.stats.maxHp);
                 this.isAttacking = false;
             }
@@ -144,75 +141,24 @@ class Sprite{
     }
 }
 
-class Game {
-    timer = 10;
-
-    constructor(width, height, player1, player2) {
-        this.width = width;
-        this.height = height;
-        this.player1 = player1;
-        this.player2 = player2;
-    }
-
-    playerAlive() {
-        if(player1.stats.maxHp <= 0 && player2.stats.maxHp <=0) {
-            console.log(player1.stats.name + " and " + player2.stats.name + " loses.")
-        }
-        else if(player1.stats.maxHp <= 0) {
-            console.log(player1.stats.name + " loses");
-        }
-        else if(player2.stats.maxHp <=0) {
-            console.log(player2.stats.name + " loses");
-        }
-    }
-
-    successfulAttack() {
-        this.player1.hit(this.player2);
-        this.player2.hit(this.player1);
-    }
-
-    countdownTimer() {
-        setTimeout(this.countdownTimer, 1000)
-        if(this.timer > 0) {
-            this.timer--;
-            document.querySelector('#timer').innerHTML = this.timer;
-        }
-        console.log(this.timer);
-    }
-
-    gameplay() {
-        this.playerAlive();
-        this.successfulAttack();
-
-    
-    }
-
-    update() {
-        this.player1.update();
-        this.player2.update();
-        this.gameplay();
-
-    }
-
-}
-
 const player1 = new Sprite({
     stats: {
         name: 'player1',
-        color: 'green',
-        maxHp: 100,
-        attackDmg: 15,
+        hp: 100,
+        attack: 10,
+        speed: 5,
         jump: 7,
-        speed: 5
+        color: 'red'
     },
     position: {
         x: 100,
         y: 0
     },
     size: {
-        width: 80,
-        height: 150
-    }, 
+        width: 50,
+        height: 100
+    },
+
     velocity: {
         x: 0,
         y: 0
@@ -227,14 +173,14 @@ const player1 = new Sprite({
         width: 150,
         height: 25
     }
-});
+})
 
 const player2 = new Sprite({
     stats: {
-        name: 'player2',
+        name: 'player1',
         color: 'blue',
         maxHp: 100,
-        attackDmg: 15,
+        attackDmg: 5,
         jump: 7,
         speed: 5
     },
@@ -262,17 +208,14 @@ const player2 = new Sprite({
     }
 });
 
-const game = new Game(canvas.width, canvas.height, player1, player2);
-
-game.countdownTimer();
-game.gameplay();
-
 function animate() {
-    window.requestAnimationFrame(animate)
+    window.requestAnimationFrame(animate);
     c.fillStyle = 'black';
-    c.fillRect(0, 0, canvas.width, canvas.height); //clear previous frame
-    game.update();
+    c.fillRect(0, 0, canvas.width, canvas.height);
+    player1.update();
+    player2.update();
+    player1.hit(player2);
+    player2.hit(player1);
 }
 
 animate();
-});
