@@ -41,7 +41,8 @@ body{
     width:20rem;
     height:3rem;
     border: 0.2rem solid rgb(11,223,36);
-    margin-top:2rem;
+    margin-top:3rem;
+    margin-bottom:10rem;
     border-radius:50px;
     overflow:hidden;
 }
@@ -53,7 +54,7 @@ body{
 
 @media screen and (max-width:768px){
     .choice-container{
-        min-width:40rem;
+        min-width:50rem;
 
     }
 }
