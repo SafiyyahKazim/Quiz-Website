@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width,
         initial-scale=1.0">
         <title>Document</title>
-        <link ref="stylesheet" href="style.css">
-        <link ref="https://kit.fontawesome.com/10c03516ac.js" 
+        <link rel="stylesheet" href="style.css">
+        <link rel="https://kit.fontawesome.com/10c03516ac.js" 
         crossorigin="anonymous">
     </head>
     <body>
@@ -14,13 +14,15 @@
             <div id="end" class="flex-center flex-column">
                 <h1 id="finalScore">0</h1>
                 <form class="end-form-container">
-                    <h2 id="end-text">You are Done!</h2>
-                    <button class="btn" id=""saveScoreBtn type="'submit"
-                    onClick="saveHighScore(event)" disabled>Save</button>
+                    <h2 id="end-text">Enter your name</h2>
+                    <input type="text" name="name" id="username" placeholder="Enter your name">
+                    <button class="btn" id="saveScoreBtn" type="submit"
+                    onclick="saveHighScore(event)" disabled>Save</button>
                     </form>
-       <a href="index.html" class="btn">Play Again</a>
-       <a href="/HomePage/home.html" class="btn">Home</a>
-            </div>
+       <a href="/Quiz Game/index.html" class="btn">Play Again</a>
+       <a href="/HomePage/home.html"class="btn">Home</a>
+         </div>
         </div>
+        <script src="end.js"></script>
 </body>
 </html>
