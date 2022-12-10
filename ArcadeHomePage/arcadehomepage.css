@@ -31,6 +31,8 @@ html {
     color:white;
 }
 
+
+
 nav {
     flex: 1;
     text-align: right;
@@ -83,7 +85,7 @@ ul{
     /*margin-top: 150px;*/
     font-size: 20px;
     width: 90%;
-    height: 90%;
+    height: 20%;
     text-align: center;
     align-items: top;
     justify-content: center;
@@ -92,4 +94,72 @@ ul{
 .word {
     flex-basis: 30%;
 }
+
+.container {
+    
+    top: 200px;
+    background-color: brown;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.container .card {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover {
+    height: 420px;
+}
+
+.container .card .imgBx {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.container .card .imgBx img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.container .card .content {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+
+
+
+
 
