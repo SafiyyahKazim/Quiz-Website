@@ -9,7 +9,7 @@
 html {
     width: 100vw;
     height: 100vh;
-    background-color: skyblue;
+    background-image: url(image-background/arcade-11.jpg);
     /*There wont be any repeat for the background*/
     background-repeat: no-repeat;
     background-position: center;
@@ -76,7 +76,7 @@ ul{
 }
 
 .row {
-    color: black;
+    color: white;
     font-weight: bold;
     display: flex;
     position: absolute;
