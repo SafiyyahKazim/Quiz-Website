@@ -66,6 +66,8 @@ class Game {
     }
 
     update() {
+        this.player1.draw();
+        this.player2.flip();
         this.player1.update();
         this.player2.update();
         this.playerAlive();
@@ -254,6 +256,81 @@ const player2 = new Player({
             xFrame: 8,
             yFrame: 8
         },
+    ]
+})
+
+const player3 = new Player({
+    stats: {
+        name: 'player3',
+        color: 'blue',
+        maxHp: 100,
+        attackDmg: 15,
+        jump: 7,
+        speed: 5
+    },
+    position: {
+        x: 900,
+        y: 0
+    },
+    size: {
+        width: 80,
+        height: 150
+    }, 
+    velocity: {
+        x: 0,
+        y: 0
+    },
+    movementKey: {
+        right: 'ArrowRight',
+        left: 'ArrowLeft',
+        jump: 'ArrowUp',
+        attack: '.'
+    },
+    hitbox: {
+        width: -30,
+        height: 15
+    },
+    imageSrc: '/Game/AnimationSheet_Character.png',
+    frameSize: {
+        width: 32, 
+        height: 32,
+    },
+    animationStates: [
+        {
+            name: 'idle',
+            xFrame: 1, //total frames for row x
+            img: 'Game/Characters/Idle.png',
+            frameWidth: 80,
+            frameHeight: 48
+        },
+        {
+            name: 'attack',
+            xFrame: 14,
+            img: 'Game/Characters/LungingStab.png',
+            frameWidth: 86,
+            frameHeight: 48
+        },
+        {
+            name:'run',
+            xFrame: 8,
+            img: 'Game/Characters/Run.png',
+            frameWidth: 80,
+            frameHeight: 48
+        },
+        {
+            name: 'jump',
+            xFrame: 2,
+            img: 'Game/Characters/JumpAndFall.png',
+            frameWidth: 80,
+            frameHeight: 48
+        },
+        {
+            name: 'die',
+            xFrame: 4,
+            img: 'Game/Characters/Die.png',
+            frameWidth: 80,
+            frameHeight: 48
+        }
     ]
 })
 
