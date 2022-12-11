@@ -108,7 +108,7 @@ ul{
 .container .card {
     position: relative;
     max-width: 300px;
-    height: 215px;
+    height: 150px;
     background: #fff;
     margin: 30px;
     padding: 20px ;
@@ -122,7 +122,7 @@ ul{
     height: 350px;
 }
 
-.container .card .imgBx {
+.container .card .gamephoto {
     position: relative;
     width: 260px;
     height: 260px;
@@ -131,7 +131,7 @@ ul{
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-.container .card .imgBx img {
+.container .card .gamephoto img {
     max-width: 100%;
     border-radius: 4px;
 }
