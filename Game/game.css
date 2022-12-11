@@ -124,15 +124,26 @@ html{
 }
 
 .instructions{ 
-    position: relative;
-    width: 100%;
+    position: absolute;
+    display: flex;
+    width: 550px;
     color:yellowgreen;
-    align-items: center;
-    
-
+    /*align-items: center;
+    text-align: center;*/
+    justify-content: center;
+    left: 700px;
 }   
 
-ul.a {
-    list-style-type: circle;
+ul li {
+    list-style-type: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
+
+.control {
+    margin: 30px;
+    left: 900%;
+}
 

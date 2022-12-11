@@ -72,3 +72,22 @@ ul{
     user-select: none;
     font-weight: bold;
 }
+
+.row {
+    color: white;
+    font-weight: bold;
+    display: flex;
+    position: absolute;
+    /*bottom: 20%;*/
+    /*margin-top: 150px;*/
+    font-size: 15px;
+    width: 90%;
+    height: 20%;
+    text-align: center;
+    align-items: top;
+    justify-content: center;
+}
+
+.word {
+    flex-basis: 30%;
+}
