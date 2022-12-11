@@ -42,7 +42,7 @@ class Game {
         if(this.timer === 0) {
             this.determineWinner(player1, player2);
         }
-        console.log(this.timer);
+        //console.log(this.timer);
     }
 
     determineWinner(player1, player2) {
@@ -103,43 +103,66 @@ const player1 = new Player({
         attack: 'g'
     },
     hitbox: {
-        width: 150,
+        width: 90,
         height: 25
     },
-    imageSrc: '/Game/AnimationSheet_Character.png', 
-    sprite: {
-        width: 32,
+    imageSrc: '/Game/AnimationSheet_Character.png',
+    frameSize: {
+        width: 32, 
         height: 32,
-        frameX: 0,
-        frameY: 0,
-        staggerFrames: 15
+        rows: 9
     },
     animationStates: [
         {
             name: 'idle',
-            frames: 2,
-            row: 0
+            xFrame: 2, //total frames for row x
+            yFrame: 0 //row
         },
         {
-            name: 'jump',
-            frames: 8,
-            row: 5
+            name: 'blink',
+            xFrame: 2,
+            yFrame: 1
+        },
+        {
+            name: 'walk',
+            xFrame: 4,
+            yFrame: 2
         },
         {
             name:'run',
-            frames: 8,
-            row: 3
+            xFrame: 8,
+            yFrame: 3
         },
         {
-            name: 'attack',
-            frames: 8,
-            row: 8
+            name:'duck',
+            xFrame: 6,
+            yFrame: 4
+        },
+        {
+            name: 'jump',
+            xFrame: 8,
+            yFrame: 5
+        },
+        {
+            name:'telport',
+            xFrame: 4,
+            yFrame: 6
+        },
+        {
+            name:'teleport',
+            xFrame: 4,
+            yFrame: 7
         },
         {
             name: 'die',
-            frames: 8,
-            row: 7
-        }
+            xFrame: 8,
+            yFrame: 7
+        },
+        {
+            name:'attack',
+            xFrame: 8,
+            yFrame: 8
+        },
     ]
 });
 
@@ -171,47 +194,87 @@ const player2 = new Player({
         attack: '.'
     },
     hitbox: {
-        width: 150,
+        width: -30,
         height: 15
     },
     imageSrc: '/Game/AnimationSheet_Character.png',
-    sprite: {
-        width: 32,
+    frameSize: {
+        width: 32, 
         height: 32,
-        frameX: 0,
-        frameY: 0,
-        staggerFrames: 20
+        rows: 9
     },
     animationStates: [
         {
             name: 'idle',
-            frames: 2,
-            row: 0
+            xFrame: 2, //total frames for row x
+            yFrame: 0 //row
         },
         {
-            name: 'jump',
-            frames: 8,
-            row: 5
+            name: 'blink',
+            xFrame: 2,
+            yFrame: 1
+        },
+        {
+            name: 'walk',
+            xFrame: 4,
+            yFrame: 2
         },
         {
             name:'run',
-            frames: 8,
-            row: 3
+            xFrame: 8,
+            yFrame: 3
         },
         {
-            name: 'attack',
-            frames: 8,
-            row: 8
+            name:'duck',
+            xFrame: 6,
+            yFrame: 4
+        },
+        {
+            name: 'jump',
+            xFrame: 8,
+            yFrame: 5
+        },
+        {
+            name:'telport',
+            xFrame: 4,
+            yFrame: 6
+        },
+        {
+            name:'teleport',
+            xFrame: 4,
+            yFrame: 7
         },
         {
             name: 'die',
-            frames: 8,
-            row: 7
-        }
+            xFrame: 8,
+            yFrame: 7
+        },
+        {
+            name:'attack',
+            xFrame: 8,
+            yFrame: 8
+        },
     ]
-});
+})
 
-const background = new Sprite({
+class Background{
+    
+    constructor({position, imageSrc}) {
+        this.position = position;
+        this.image = new Image();
+        this.image.src = imageSrc;
+    }
+
+    draw() {
+        c.drawImage(this.image, this.position.x, this.position.y, canvas.width, canvas.height);
+    }
+
+    update() {
+        this.draw();
+    }
+}
+
+const background = new Background({
     position: {
         x: 0,
         y: 0
@@ -227,7 +290,6 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height); //clear previous frame
     background.update();
     game.update();
-
 }
 
 animate();
