@@ -1,5 +1,3 @@
-
-
 class Player {
     floor = 50;
     dead = 0;
@@ -250,6 +248,20 @@ class Player {
         }
     }
 
+    flip() {
+        c.translate(this.size.width, 0);
+        c.scale(-1, 1);
+        c.drawImage(this.image,
+            this.currentxFrame * this.frameSize.width, //which part of the sheet to capture
+            this.currentyFrame * this.frameSize.height,
+            this.frameSize.width, //pixel size
+            this.frameSize.height,
+            -this.position.x, //location on screen
+            this.position.y,
+            this.size.width, //scaling size
+            this.size.height);
+    }
+
     draw() {
         //hitbox
         /*
@@ -258,7 +270,7 @@ class Player {
             c.fillRect(this.position.x, this.position.y, this.hitbox.width, this.hitbox.height);
         }
         */
-   
+        
         c.drawImage(
             this.image,
             this.currentxFrame * this.frameSize.width, //which part of the sheet to capture
@@ -270,13 +282,13 @@ class Player {
             this.size.width, //scaling size
             this.size.height
         );
-
+    
         console.log('current x: ' + this.currentxFrame);
         console.log('current y: ' + this.currentyFrame)
     }
 
     update() {
-        this.draw();
+    
         console.log(this.currentAnimation)
         this.position.y += this.velocity.y;
         this.position.x += this.velocity.x;
