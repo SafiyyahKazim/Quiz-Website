@@ -21,7 +21,7 @@ const careerQuiz = [
 ];
 
 const quiz = document.getElementById('quiz')
-const questioneh = document.getElementById('question')
+const question = document.getElementById('question')
 const answereh = document.querySelectorAll('.answer')
 const texta = document.getElementById('texta')
 const textb = document.getElementById('textb')
@@ -32,6 +32,7 @@ const submitButton = document.getElementById('submit')
 // set variable
 let currentQuestion = 0
 let score = 0
+let percent = 0
 
 // Start of the program
 loadQuestion()
@@ -43,7 +44,7 @@ function loadQuestion() {
 
     const currentQuestionData = careerQuiz[currentQuestion]
     // Display the current question and answers
-    questioneh.innerText = currentQuestionData.question
+    question.innerText = currentQuestionData.question
     texta.innerText  = currentQuestionData.a
     textb.innerText  = currentQuestionData.b
     textc.innerText  = currentQuestionData.c
@@ -78,12 +79,12 @@ submitButton.addEventListener('click', () => {
             loadQuestion()
         } 
         else {
+            percent = (score / careerQuiz.length) * 100
             quiz.innerHTML = `<h2> You answered ${score}/${careerQuiz.length} questions correct!</h2>
+            <h2> Your grade is ${percent} percent.</h2>
             <button onclick = "location.reload()">Retry</button>
             `
         }
     }  
 })
-
-
 
