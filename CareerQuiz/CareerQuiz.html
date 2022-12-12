@@ -13,7 +13,7 @@
                 <nav>
                     <ul>
                         <!--These are the button to another page-->
-                        <li><a href = "home.html">Home</a></li>
+                        <li><a href = "/HomePage/home.html">Home</a></li>
                         <li><a href = "/ArcadeHomePage/Arcadehomepage.html">Arcade Game</a></li>
                         <li><a href = "/QuizHomePage/homequizpage.html" id = "select">Quiz Game</a></li>
                         <li><a href = "">Login/Signup</a></li>
@@ -24,22 +24,42 @@
             <!--Explain the game-->
             <div class = "row">
                 <div class = "word">
-                    <h1>Answer the questions below (the quiz is not really accurate).</h1>    
-                    <!--Qi Da Chen-->
+                    <h1>Answer the questions below (the quiz is not really accurate).</h1>
                 </div>
             </div>
 
-            <div class = "container">
-                <div class = "question">Question</div>
-                <div class = "choices">
-                    <p class = "choiceprefix">A</p>
-                    <p class = "choicetext" data-number = "1">Choice 1</p>
-                </div>
-                <div class = "choices">
-                    <p class = "choiceprefix">B</p>
-                    <p class = "choicetext" data-number = "2">Choice 2</p>
+
+            <div class = "testholder">
+                <div class = "container" id = "quiz">
+                    <div class = "quiz-header">
+                        <h2 id = "question">Question test</h2>
+                        <ul>
+                            <li>
+                                <input type = "radio" name = "answer" id = "a" class = "answer">
+                                <label for = "a" id = "texta">Answer</label>
+                            </li>
+    
+                            <li>
+                                <input type = "radio" name = "answer" id = "b" class = "answer">
+                                <label for = "b" id = "textb">Answer</label>
+                            </li>
+    
+                            <li>
+                                <input type = "radio" name = "answer" id = "c" class = "answer">
+                                <label for = "c" id = "textc">Answer</label>
+                            </li>
+    
+                            <li>
+                                <input type = "radio" name = "answer" id = "d" class = "answer">
+                                <label for = "d" id = "textd">Answer</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <button id = "submit">Submit</button>
+                    <br>
                 </div>
             </div>
+
 
             <script src = "CareerQuiz.js"></script>
         </body>

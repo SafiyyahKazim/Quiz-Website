@@ -78,32 +78,76 @@ ul{
     font-weight: bold;
     display: flex;
     position: absolute;
-    /*bottom: 20%;*/
-    /*margin-top: 150px;*/
     font-size: 15px;
     width: 90%;
     height: 20%;
     text-align: center;
     align-items: top;
     justify-content: center;
-    /*background-color: brown;*/
 }
 
 .word {
     flex-basis: 30%;
 }
 
-.container{
-    background-color: blue;
-    top: 400px;
-    position: relative;
-    width: 100%;
-}
-.choice {
-    background-color: blue;
-    top: 300px;
+
+
+
+/*For the quiz*/
+.testholder{ 
     display: flex;
-    width: 100%;
-    margin-bottom: 8rem;
-    border-radius: 4px;
+    position: absolute;
+    margin-top: 200px;
+    width: 90%; 
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 0.1);
+    width: 1000px;
+    height: 500px;
+    /*margin-left: 350px;*/
+}
+
+.quiz-header {
+    /*background-color: blueviolet;*/
+    /*top: 300px;*/
+    padding: 4rem;
+    text-align: left;
+}
+
+#quiz h2{
+    padding: 10px;
+    font-size: 30px;
+    justify-content: center;
+}
+
+ul li{
+    font-size: 30px;
+    margin: 10px;
+}
+
+ul li label{
+    cursor: pointer;
+}
+
+#quiz button {
+    background-color: skyblue;
+    border-radius: 25px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+}
+
+#quiz button:hover{
+    background-color: yellow;
 }
