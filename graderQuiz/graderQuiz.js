@@ -18,7 +18,7 @@ function starting() {
     //---------------------------------------------------------------Grade 3-----------------------------------------------------------
     if(gradechoice == 3) {
         document.querySelector('.contentbox').style.display = 'none'
-        const careerQuiz = [
+        const graderQuiz = [
             {
                 question: "What is 1 + 3?",
                 a: "3",
@@ -44,7 +44,7 @@ function starting() {
             // Will remove the selected choice from last question.
             deselectAnswer()
 
-            const currentQuestionData = careerQuiz[currentQuestion]
+            const currentQuestionData = graderQuiz[currentQuestion]
             // Display the current question and answers
             question.innerText = currentQuestionData.question
             texta.innerText  = currentQuestionData.a
@@ -71,18 +71,18 @@ function starting() {
         submitButton.addEventListener('click', () => {
         const answer = getChoice()
             if(answer) {
-                if(answer == careerQuiz[currentQuestion].correct){
+                if(answer == graderQuiz[currentQuestion].correct){
                     score++
                 }
 
                 currentQuestion++ 
 
-                if(currentQuestion < careerQuiz.length) {
+                if(currentQuestion < graderQuiz.length) {
                     loadQuestion()
                 } 
                 else {
-                    percent = (score / careerQuiz.length) * 100
-                    quiz.innerHTML = `<h2> You answered ${score}/${careerQuiz.length} questions correct!</h2>
+                    percent = (score / graderQuiz.length) * 100
+                    quiz.innerHTML = `<h2> You answered ${score}/${graderQuiz.length} questions correct!</h2>
                     <h2> Your grade is ${percent} percent.</h2>
                     <button onclick = "location.reload()">Retry</button>
                     `
@@ -97,7 +97,7 @@ function starting() {
 //---------------------------------------------------------------Grade 4-----------------------------------------------------------
     if(gradechoice == 4) {
         document.querySelector('.contentbox').style.display = 'none';
-        const careerQuiz = [
+        const graderQuiz = [
             {
                 question: "What is 1 + 4?",
                 a: "3",
@@ -123,7 +123,7 @@ function starting() {
             // Will remove the selected choice from last question.
             deselectAnswer()
 
-            const currentQuestionData = careerQuiz[currentQuestion]
+            const currentQuestionData = graderQuiz[currentQuestion]
             // Display the current question and answers
             question.innerText = currentQuestionData.question
             texta.innerText  = currentQuestionData.a
@@ -150,18 +150,18 @@ function starting() {
         submitButton.addEventListener('click', () => {
         const answer = getChoice()
             if(answer) {
-                if(answer == careerQuiz[currentQuestion].correct){
+                if(answer == graderQuiz[currentQuestion].correct){
                     score++
                 }
 
                 currentQuestion++ 
 
-                if(currentQuestion < careerQuiz.length) {
+                if(currentQuestion < graderQuiz.length) {
                     loadQuestion()
                 } 
                 else {
-                    percent = (score / careerQuiz.length) * 100
-                    quiz.innerHTML = `<h2> You answered ${score}/${careerQuiz.length} questions correct!</h2>
+                    percent = (score / graderQuiz.length) * 100
+                    quiz.innerHTML = `<h2> You answered ${score}/${graderQuiz.length} questions correct!</h2>
                     <h2> Your grade is ${percent} percent.</h2>
                     <button onclick = "location.reload()">Retry</button>
                     `
@@ -174,7 +174,7 @@ function starting() {
 //---------------------------------------------------------------Grade 5-----------------------------------------------------------
     if(gradechoice == 5) {
         document.querySelector('.contentbox').style.display = 'none';
-        const careerQuiz = [
+        const graderQuiz = [
             {
                 question: "What is 1 + 5?",
                 a: "3",
@@ -200,7 +200,7 @@ function starting() {
             // Will remove the selected choice from last question.
             deselectAnswer()
 
-            const currentQuestionData = careerQuiz[currentQuestion]
+            const currentQuestionData = graderQuiz[currentQuestion]
             // Display the current question and answers
             question.innerText = currentQuestionData.question
             texta.innerText  = currentQuestionData.a
@@ -227,18 +227,18 @@ function starting() {
         submitButton.addEventListener('click', () => {
         const answer = getChoice()
             if(answer) {
-                if(answer == careerQuiz[currentQuestion].correct){
+                if(answer == graderQuiz[currentQuestion].correct){
                     score++
                 }
 
                 currentQuestion++ 
 
-                if(currentQuestion < careerQuiz.length) {
+                if(currentQuestion < graderQuiz.length) {
                     loadQuestion()
                 } 
                 else {
-                    percent = (score / careerQuiz.length) * 100
-                    quiz.innerHTML = `<h2> You answered ${score}/${careerQuiz.length} questions correct!</h2>
+                    percent = (score / graderQuiz.length) * 100
+                    quiz.innerHTML = `<h2> You answered ${score}/${graderQuiz.length} questions correct!</h2>
                     <h2> Your grade is ${percent} percent.</h2>
                     <button onclick = "location.reload()">Retry</button>
                     `
