@@ -151,3 +151,46 @@ ul li label{
 #quiz button:hover{
     background-color: yellow;
 }
+
+.contentbox{ 
+    display: flex;
+    position: absolute;
+    margin-top: 200px;
+    width: 90%; 
+    align-items: center;
+    justify-content: center;
+}
+
+.contentinside {
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 0.1);
+    width: 1000px;
+    height: 500px;
+    /*margin-left: 350px;*/
+}
+
+.gradeheader {
+    /*background-color: blueviolet;*/
+    /*top: 300px;*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 4rem;
+    text-align: left;
+}
+
+#gradechoice button {
+    background-color: skyblue;
+    border-radius: 25px;
+    padding: 3px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+}
