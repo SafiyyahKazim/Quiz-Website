@@ -54,7 +54,6 @@ ol {
 }
   
 .topnav a {
-    /*float: left;*/
     color: aqua;
     margin-left: 20px;
     text-align: right;
@@ -104,12 +103,12 @@ ol {
     background-color: #eee;
   }
   
-  /* On mouse-over, add a grey background color */
+  /* On mouse-over */
   .container:hover input ~ .checkmark {
     background-color: #ccc;
   }
   
-  /* When the checkbox is checked, add a blue background */
+  /* When the checkbox is checked */
   .container input:checked ~ .checkmark {
     background-color: #2196F3;
   }
@@ -126,7 +125,7 @@ ol {
     display: block;
   }
   
-  /* Style the checkmark/indicator */
+  /* Style the checkmark */
   .container .checkmark:after {
     left: 30%;
     top: 10%;
