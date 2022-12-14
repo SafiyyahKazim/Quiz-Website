@@ -1,15 +1,20 @@
+//create variable
 var block = document.getElementById("block");
 var hole = document.getElementById("hole");
 var character = document.getElementById("character");
 var jumping = 0;
 var counter = 0;
-
+//animate iteration, run every single time animiation run
 hole.addEventListener('animationiteration', () => {
+    //random variable, multiple by 300 this is creating the blocks change everytime
     var random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
     counter++;
 });
+//function to make gravity
+
 setInterval(function(){
+ //new variable equal to top harcater div  
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if(jumping==0){
         character.style.top = (characterTop+3)+"px";
