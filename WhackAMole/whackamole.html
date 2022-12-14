@@ -18,8 +18,8 @@
             <ul>
                 <!--These are the button to another page-->
                 <li><a href = "/HomePage/home.html">Home</a></li>
-                <li><a href = "/ArcadeHomePage/Arcadehomepage.html">Arcade Game</a></li>
-                <li><a href = "/QuizHomePage/homequizpage.html" id = "select">Quiz Game</a></li>
+                <li><a href = "/ArcadeHomePage/Arcadehomepage.html" id = "select">Arcade Game</a></li>
+                <li><a href = "/QuizHomePage/homequizpage.html">Quiz Game</a></li>
                 <li><a href = "">Login/Signup</a></li>
             </ul>
         </nav>
@@ -27,21 +27,14 @@
   
   
   <div class = "gameContent">
-    <!--button onclick="startGame()">click to play</button-->
     <div class="game">
       <div class="topinfo">
         <h1>Whack a Mole!<span class="gameName"></span></h1>
-        <h1>Time: <span class="time">0</span> Score: <span class="score">0</span></h1>
+        <p>Time: <span class="time">0</span> Score: <span class="score">0</span></p>
         <p>Missed: <span class = "missed">0</span> Total mole: <span class = "amountmole">0</span></p>
       </div>
-
-      <div class = "contentbox">
-        <div class = "contentinfo">
-          <button onclick="startGame()">PLAY</button>
-        </div>
-      </div>
-
-
+      <button onclick="startGame()">PLAY</button>
+      
       <div class="hole hole1">
         <div class="mole" ></div>
       </div>
@@ -69,10 +62,10 @@
       <div class="hole hole9">
         <div class="mole" ></div>
       </div>
-
       
-
+      
     </div>
+    
 
     
   </div>

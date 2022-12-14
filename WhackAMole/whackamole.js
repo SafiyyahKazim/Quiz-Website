@@ -1,129 +1,111 @@
-/*
-HERE IS THE JS TO RUN THE GAME
-*/
-const holes = document.querySelectorAll(".hole"); // .hole from css
-const scoreBoard = document.querySelector(".score"); // .score from css
-const mole = document.querySelectorAll(".mole"); // .mole from css
+// getting all the div from html 
+const holes = document.querySelectorAll(".hole"); 
+const scoreBoard = document.querySelector(".score"); 
+const mole = document.querySelectorAll(".mole"); 
 const timer = document.querySelector(".time");
 const missed = document.querySelector(".missed"); 
 const amounthole = document.querySelector(".amountmole"); 
 const holeUp = [];
 let lastHole; // let are variables.
 let timeUp;
-let score;
+let score = 0;
 let timeCount;
-let timeAmount = 5000;
+let timeAmount = 60000;
 var play = false;
 let missedcounter = 0
 let amountmolecounter = 0
 
-function randChar(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
+
+// random gen for the time the mole will stay up and how much mole.
+function randomGen(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
-function randAmount(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
- 
-}
-//Function to give a random time to show the image
-function randomTime(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
 
-/*
-This randomHole function is to control the mole pop up from which hole.
-using a random gen to get a random hole.
-creating array for the holes. 1 - 9
-*/
+// decide which hole the mole will pop up from
 function randomHole(holes) {
-  const idx = Math.floor(Math.random() * holes.length);
-  const hole = holes[idx];
-  // if the hole is the same as the previews holes, this if will run.
+  const idx = Math.floor(Math.random() * holes.length); // gets the index of the hole
+  const hole = holes[idx]; // store the index in hole
+  // if the hole picked it like the pervious hole, run the randomhole hole again to pick another hole.
   if (hole === lastHole) {
     return randomHole(holes);
   }
-  lastHole = hole; // save the hole into lastHole for if statement in next run.
-  amountmolecounter++
-  amounthole.textContent = amountmolecounter
-  return hole; // return the hole to peep() function.
+  lastHole = hole; // store the hole in lasthole so we can test the if statment above
+  amountmolecounter++ // amount of mole counter will increment
+  amounthole.textContent = amountmolecounter // the amount will display on the game each time
+  return hole; // return the hole back to peep so it can do the pop up.
 }
 
-/*
-This peep function is to control the speed and timeframes of the image
-to show in each hole. The numbers are big because it counts in millisecond
-*/
+// peep function controls the game
 function peep() {
   let hole;
-  const time = randomTime(800, 1000);
-  const holeAmount = randAmount(1,3); // call randAmount function to generate an amount of hole.
+  // call randGen function to generate an amount of hole and time.
+  const time = randomGen(800, 1500); // can change number to mess with visiable time
+  const holeAmount = randomGen(1,3); // can change number to mess with hole amount,
+                                     // it have to be within the range of holes.length.
   for(let i =0; i < holeAmount; i++) { // for loop for the amount of hole.
     hole = randomHole(holes); // decide which hole will pop up
-    holeUp[i] = hole; // store the hole in an array for later
-    hole.classList.add("up"); // creating a class list on hole and added up to it. up is in the css.\
+    holeUp[i] = hole; // store the hole in an array for the timeout function below
+    hole.classList.add("up"); // creating a class list on hole and added up to it. 
+                              // it will trigger the up css.
   }
+  // when the time is up, the lines inside will run
   setTimeout(() => {
-    for(let i =0; i < holeUp.length; i++) {
-      hole = holeUp[i];
-      hole.classList.remove("up"); // remove up so go down
-      missedcounter++
-      missed.textContent = missedcounter;
+    for(let i =0; i < holeUp.length; i++) { 
+      hole = holeUp[i]; // i will go through all the index of hole that were up
+      hole.classList.remove("up"); // remove the css up so the mole will go down again
+      missedcounter++ // increment the miss counter
+      missed.textContent = missedcounter; // display the amount of missed on the screen
     }
-    if (!timeUp) peep(); // When time is not up, it will call the peep() method again.
-    if (timeUp) {
-      play = false;
+    if (!timeUp) peep(); // if the time is not up, call the peep function again (Recursive)
+    if (timeUp) { // when the time is up
+      play = false; // set play back to false so we can use the button again
     } // When the time is up, play will turn back to false.
-  }, time); // when the time is reach, the mole will pop back in.
+  }, time); // the amount of time that was passed to this function. duration of the game
 }
 
-/*
-This startGame function is to control and stop the game
-when the time is up.
-*/
-
+// the function that run first when the play button is clicked on
 function startGame() {
-  // this code start first.
-  document.querySelector('.contentbox').style.display = 'none'
-  if(play == true) { // This if statement is to prevent the click of play button more than once.
+  if(play == true) { // if the button is press on again, it will check if play is true
+    // This is the prvent the game from being play again when current game is running.
     console.log("You are playing the game right now!");
   }
-  if(play == false) {
-    tick();
-    play = true; // change the play to true, when the player press play.
-    timeCount = timeAmount / 1000;
-    //timer.textContent = timeCount; // display the time.
-    scoreBoard.textContent = 0; // score will display 0.
-    timeUp = false; // time will be false up until time is over.
-    score = 0; // score start from 0.
-    peep(); // call the peep() function.
-    setTimeout(() => (timeUp = true), timeAmount); // This change the length of the game.
+  if(play == false) { // if there are no current game playing, this lines in this if statement 
+    tick(); // call the tick function to start a timer
+    timeCount = timeAmount / 1000; // does the math to convert millisec to sec
+    play = true; // set play as true to prevent another game
+    scoreBoard.textContent = 0; // the score board will be 0 then increase as you hit.
+    timeUp = false; // time is set to false if the time is up.
+    peep(); // run the peep function to start the mole from peeping up the hole.
+    setTimeout(() => (timeUp = true), timeAmount); // timeUp will turn true when the timeAmount is reach.
   }
 }
 
-
-/*
-This bonk is to control the score counter when you hit a mole.
-if isTrusted is used to prevent other use JS to fake
-the game in order to win, not too necessary.
-*/
-function bonk(e) {
-  if (!e.isTrusted) return;
-  score = score + 10;
-  this.parentNode.classList.remove("up");
-  scoreBoard.textContent = score;
+// the bonk function will add the score when you hit a mole
+function bonk() {
+  score = score + 10; // the score will increase by 10 for each hit
+  this.parentNode.classList.remove("up"); // the up from css will be removed so 
+                                          // that mole will go back into the hole
+  scoreBoard.textContent = score; // display the current score on the screen
 }
 
+// tick function controls the timer. 
+// the reason i have this is because the original timer, 
+// i created was control by the mole popping back down.
+// So if a mole visiable time is 8 milisec, the timer will still drop
 function tick() {
   setTimeout(() => {
-    if(timeCount > 0){
-    timeCount--;
-    timer.textContent = timeCount;
+    if(timeCount > 0){ // if the timer is greater than 0
+    timeCount--; // sub the timer by 1
+    timer.textContent = timeCount; // display the time left
+    tick();
     }
-    if(timeCount <= 0){
-      clearTimeout(); 
-    }else{
-      tick();
-    }
+    else { // else if timer is not greater than 0, it stop
+      clearTimeout(); // cancel/stop the timeout
+    }    
   },1000)
 }
 
+// a for each loop that will run through all the mole to find a click by the mouse
+// when a click is detected, it will run the bonk function
 mole.forEach((mole) => mole.addEventListener("click", bonk));

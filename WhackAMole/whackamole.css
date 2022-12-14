@@ -31,7 +31,7 @@ html {
   
   /*Design of all h1*/
   h1 {
-    font-size: 8rem;
+    font-size: 60px;
     line-height: 0.2;
     margin-bottom: 5;
     padding-left: 50px;
@@ -177,22 +177,8 @@ ul{
 }
 
 
-
-/**********************************contentbox*************************************/
-.contentbox {
-  width: 1000px;
-  height: 930px;
-  z-index: 3;
+ button {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 25px;
-  background-image: url(background/istockphoto-1153033854-612x612.jpg);
-  background-size: cover;
-}
-
-button {
   width: 100px;
   height: 50px;
   font-size: 30px;
@@ -201,4 +187,6 @@ button {
   margin: 10px;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  display: flex;
 }
