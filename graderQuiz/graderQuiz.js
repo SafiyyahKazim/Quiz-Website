@@ -1,9 +1,10 @@
 
 function starting() {
-    var gradechoice = document.getElementById("grade").value
-    const quiz = document.getElementById('quiz')
+    var gradechoice = document.getElementById("grade").value // gets the value from grade choice (3,4, or 5)
+    const answer = document.querySelectorAll('.answer') // get all the input (bubble / radio)
+    // get all the id from the html so we can edit text
+    const quiz = document.getElementById('quiz') 
     const question = document.getElementById('question')
-    const answereh = document.querySelectorAll('.answer')
     const texta = document.getElementById('texta')
     const textb = document.getElementById('textb')
     const textc = document.getElementById('textc')
@@ -14,11 +15,14 @@ function starting() {
     let currentQuestion = 0
     let score = 0
     let percent = 0
+    let answerpicked 
     
     //---------------------------------------------------------------Grade 3-----------------------------------------------------------
     if(gradechoice == 3) {
-        document.querySelector('.contentbox').style.display = 'none'
+        document.querySelector('.contentbox').style.display = 'none' // remove the content box for asking grade
+        // change the background image
         document.querySelector('.container').style.backgroundImage = "url('background/hello-third-grade-background-inspirational-quotes-typography-lettering-design-first-day-school_557783-209.webp')";
+        // question and answer holder. Its an array
         const graderQuiz = [
             {
                 question: "What is 10 x 3?",
@@ -61,58 +65,62 @@ function starting() {
                 correct: "a",
             },  
         ];
-
+        
+        // call the load question function
         loadQuestion()
 
         // Loads the question
         function loadQuestion() {
-            // Will remove the selected choice from last question.
-            deselectAnswer()
-
+            // store graderquiz array index data to current question data.
             const currentQuestionData = graderQuiz[currentQuestion]
-            // Display the current question and answers
+            // Display the current question and answers (currentQuestionData )
             question.innerText = currentQuestionData.question
             texta.innerText  = currentQuestionData.a
             textb.innerText  = currentQuestionData.b
             textc.innerText  = currentQuestionData.c
             textd.innerText  = currentQuestionData.d
         }
-
-        function deselectAnswer() {
-            answereh.forEach(answereh => answereh.checked = false)
-        }
-
-        function getChoice() {
-            let answer 
-            answereh.forEach(answereh => {
-            if(answereh.checked) {
-                answer = answereh.id
-            }
-        })
-        return answer
-        }
-
+  
         //event when button is clicked on
-        submitButton.addEventListener('click', () => {
-        const answer = getChoice()
-            if(answer) {
-                if(answer == graderQuiz[currentQuestion].correct){
-                    score++
+        submitButton.addEventListener('click', () => { 
+            // Run a for each loop to see if an answer bubble is selected 
+            answer.forEach(answer => {
+                if(answer.checked) { // if an answer bubble is sleceted
+                    answerpicked = answer.id // store the selected bubble id into answer picked
                 }
+                answer.checked = false; // remove the old check for bubble 
+                                        // so it doesnt display on next question
+            })
+            //if the answer picked matches the correct answer
+            if(answerpicked == graderQuiz[currentQuestion].correct){
+                score++ // the score increase
+            }
 
-                currentQuestion++ 
+            currentQuestion++ // increment the currentquestion so it goes to the next array
 
-                if(currentQuestion < graderQuiz.length) {
-                    loadQuestion()
-                } 
-                else {
-                    percent = (score / graderQuiz.length) * 100
-                    quiz.innerHTML = `<h2> You answered ${score}/${graderQuiz.length} questions correct!</h2>
-                    <h2> Your grade is ${percent} percent.</h2>
+            // if currentquestion is less than graderQuiz array length 
+            // which means there is more questions left
+            if(currentQuestion < graderQuiz.length) { 
+                loadQuestion() // load the next question
+            } 
+            else { // if not less than
+                percent = (score / graderQuiz.length) * 100 // calculate the amount right into percent
+                if(percent >= 65) { // if percent is greater than 65,
+                    // display the percent, you passed message and a button to refresh the web page
+                    quiz.innerHTML = `<h1> Your grade is ${percent} percent.</h1> 
+                    <h1>You passed!!</h1>
                     <button onclick = "location.reload()">Retry</button>
                     `
                 }
-            }  
+                else { // if not greater than 65
+                    // display the percent, you failed message and the button
+                    quiz.innerHTML = `<h1> Your grade is ${percent} percent.</h1>
+                    <h1>You failed!!</h1>
+                    <button onclick = "location.reload()">Retry</button>
+                    `
+                }
+            }
+             
         })
     }
 
@@ -166,57 +174,61 @@ function starting() {
             },
         ];
 
+        // call the load question function
         loadQuestion()
 
         // Loads the question
         function loadQuestion() {
-            // Will remove the selected choice from last question.
-            deselectAnswer()
-
+            // store graderquiz array index data to current question data.
             const currentQuestionData = graderQuiz[currentQuestion]
-            // Display the current question and answers
+            // Display the current question and answers (currentQuestionData )
             question.innerText = currentQuestionData.question
             texta.innerText  = currentQuestionData.a
             textb.innerText  = currentQuestionData.b
             textc.innerText  = currentQuestionData.c
             textd.innerText  = currentQuestionData.d
         }
-
-        function deselectAnswer() {
-            answereh.forEach(answereh => answereh.checked = false)
-        }
-
-        function getChoice() {
-            let answer 
-            answereh.forEach(answereh => {
-            if(answereh.checked) {
-                answer = answereh.id
-            }
-        })
-        return answer
-        }
-
+  
         //event when button is clicked on
-        submitButton.addEventListener('click', () => {
-        const answer = getChoice()
-            if(answer) {
-                if(answer == graderQuiz[currentQuestion].correct){
-                    score++
+        submitButton.addEventListener('click', () => { 
+            // Run a for each loop to see if an answer bubble is selected 
+            answer.forEach(answer => {
+                if(answer.checked) { // if an answer bubble is sleceted
+                    answerpicked = answer.id // store the selected bubble id into answer picked
                 }
+                answer.checked = false; // remove the old check for bubble 
+                                        // so it doesnt display on next question
+            })
+            //if the answer matches the correct answer
+            if(answerpicked == graderQuiz[currentQuestion].correct){
+                score++ // the score increase
+            }
 
-                currentQuestion++ 
+            currentQuestion++ // increment the currentquestion so it goes to the next array
 
-                if(currentQuestion < graderQuiz.length) {
-                    loadQuestion()
-                } 
-                else {
-                    percent = (score / graderQuiz.length) * 100
-                    quiz.innerHTML = `<h2> You answered ${score}/${graderQuiz.length} questions correct!</h2>
-                    <h2> Your grade is ${percent} percent.</h2>
+            // if currentquestion is less than graderQuiz array length 
+            // which means there is more questions left
+            if(currentQuestion < graderQuiz.length) { 
+                loadQuestion() // load the next question
+            } 
+            else { // if not less than
+                percent = (score / graderQuiz.length) * 100 // calculate the amount right into percent
+                if(percent >= 65) { // if percent is greater than 65,
+                    // display the percent, you passed message and a button to refresh the web page
+                    quiz.innerHTML = `<h1> Your grade is ${percent} percent.</h1> 
+                    <h1>You passed!!</h1>
                     <button onclick = "location.reload()">Retry</button>
                     `
                 }
-            }  
+                else { // if not greater than 65
+                    // display the percent, you failed message and the button
+                    quiz.innerHTML = `<h1> Your grade is ${percent} percent.</h1>
+                    <h1>You failed!!</h1>
+                    <button onclick = "location.reload()">Retry</button>
+                    `
+                }
+            }
+             
         })
     }
 
@@ -268,76 +280,61 @@ function starting() {
             },   
         ];
 
+        // call the load question function
         loadQuestion()
 
         // Loads the question
         function loadQuestion() {
-            // Will remove the selected choice from last question.
-            deselectAnswer()
-
+            // store graderquiz array index data to current question data.
             const currentQuestionData = graderQuiz[currentQuestion]
-            // Display the current question and answers
+            // Display the current question and answers (currentQuestionData )
             question.innerText = currentQuestionData.question
             texta.innerText  = currentQuestionData.a
             textb.innerText  = currentQuestionData.b
             textc.innerText  = currentQuestionData.c
             textd.innerText  = currentQuestionData.d
         }
-
-        function deselectAnswer() {
-            answereh.forEach(answereh => answereh.checked = false)
-        }
-
-        function getChoice() {
-            let answer 
-            answereh.forEach(answereh => {
-            if(answereh.checked) {
-                answer = answereh.id
-            }
-        })
-        return answer
-        }
-
+  
         //event when button is clicked on
-        submitButton.addEventListener('click', () => {
-        const answer = getChoice()
-            if(answer) {
-                if(answer == graderQuiz[currentQuestion].correct){
-                    score++
+        submitButton.addEventListener('click', () => { 
+            // Run a for each loop to see if an answer bubble is selected 
+            answer.forEach(answer => {
+                if(answer.checked) { // if an answer bubble is sleceted
+                    answerpicked = answer.id // store the selected bubble id into answer picked
                 }
+                answer.checked = false; // remove the old check for bubble 
+                                        // so it doesnt display on next question
+            })
+            //if the answer matches the correct answer
+            if(answerpicked == graderQuiz[currentQuestion].correct){
+                score++ // the score increase
+            }
 
-                currentQuestion++ 
+            currentQuestion++ // increment the currentquestion so it goes to the next array
 
-                if(currentQuestion < graderQuiz.length) {
-                    loadQuestion()
-                } 
-                else {
-                    percent = (score / graderQuiz.length) * 100
-                    quiz.innerHTML = `<h2> You answered ${score}/${graderQuiz.length} questions correct!</h2>
-                    <h2> Your grade is ${percent} percent.</h2>
+            // if currentquestion is less than graderQuiz array length 
+            // which means there is more questions left
+            if(currentQuestion < graderQuiz.length) { 
+                loadQuestion() // load the next question
+            } 
+            else { // if not less than
+                percent = (score / graderQuiz.length) * 100 // calculate the amount right into percent
+                if(percent >= 65) { // if percent is greater than 65,
+                    // display the percent, you passed message and a button to refresh the web page
+                    quiz.innerHTML = `<h1> Your grade is ${percent} percent.</h1> 
+                    <h1>You passed!!</h1>
                     <button onclick = "location.reload()">Retry</button>
                     `
                 }
-            }  
+                else { // if not greater than 65
+                    // display the percent, you failed message and the button
+                    quiz.innerHTML = `<h1> Your grade is ${percent} percent.</h1>
+                    <h1>You failed!!</h1>
+                    <button onclick = "location.reload()">Retry</button>
+                    `
+                }
+            }
+             
         })
     }  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
