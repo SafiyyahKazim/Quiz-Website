@@ -10,11 +10,8 @@ let lastHole; // let are variables.
 let timeUp;
 let score;
 let timeCount;
-let timeAmount = 20000;
+let timeAmount = 60000;
 var play = false;
-let hit = new Audio("./audio/Bat_hit.wav");
-let music = new Audio("./audio/GameMusic.mp3");
-let ouch = new Audio("./audio/ouch.mp3");
 
 function randChar(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -69,8 +66,6 @@ function peep() {
     if (timeUp) {
       play = false;
       document.querySelector('.game').style.cursor = "auto";
-      music.pause();
-      music.currentTime = 0;
     } // When the time is up, play will turn back to false.
   }, time); // when the time is reach, the mole will pop back in.
 }
@@ -81,8 +76,8 @@ when the time is up.
 */
 
 function startGame() {
-  music.play();
   // this code start first.
+  document.querySelector('.contentbox').style.display = 'none'
   if(play == true) { // This if statement is to prevent the click of play button more than once.
     console.log("You are playing the game right now!");
   }
@@ -108,10 +103,6 @@ the game in order to win, not too necessary.
 */
 function bonk(e) {
   if (!e.isTrusted) return;
-  hit.play();
-  ouch.play();
-  hit.currentTime = 0;
-  ouch.currentTime = 0;
   score = score + 10;
   this.parentNode.classList.remove("up");
   scoreBoard.textContent = score;
