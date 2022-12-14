@@ -5,13 +5,17 @@ const holes = document.querySelectorAll(".hole"); // .hole from css
 const scoreBoard = document.querySelector(".score"); // .score from css
 const mole = document.querySelectorAll(".mole"); // .mole from css
 const timer = document.querySelector(".time");
+const missed = document.querySelector(".missed"); 
+const amounthole = document.querySelector(".amountmole"); 
 const holeUp = [];
 let lastHole; // let are variables.
 let timeUp;
 let score;
 let timeCount;
-let timeAmount = 60000;
+let timeAmount = 5000;
 var play = false;
+let missedcounter = 0
+let amountmolecounter = 0
 
 function randChar(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -19,6 +23,7 @@ function randChar(min, max) {
 
 function randAmount(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
+ 
 }
 //Function to give a random time to show the image
 function randomTime(min, max) {
@@ -38,6 +43,8 @@ function randomHole(holes) {
     return randomHole(holes);
   }
   lastHole = hole; // save the hole into lastHole for if statement in next run.
+  amountmolecounter++
+  amounthole.textContent = amountmolecounter
   return hole; // return the hole to peep() function.
 }
 
@@ -54,18 +61,16 @@ function peep() {
     holeUp[i] = hole; // store the hole in an array for later
     hole.classList.add("up"); // creating a class list on hole and added up to it. up is in the css.\
   }
- // document.getElementsByClassName("mole").game.zIndex = "2";
   setTimeout(() => {
     for(let i =0; i < holeUp.length; i++) {
       hole = holeUp[i];
       hole.classList.remove("up"); // remove up so go down
+      missedcounter++
+      missed.textContent = missedcounter;
     }
-   // document.getElementsByClassName("mole").game.zIndex = "2";
-    //timeCount = timeUp;
     if (!timeUp) peep(); // When time is not up, it will call the peep() method again.
     if (timeUp) {
       play = false;
-      document.querySelector('.game').style.cursor = "auto";
     } // When the time is up, play will turn back to false.
   }, time); // when the time is reach, the mole will pop back in.
 }
@@ -83,7 +88,6 @@ function startGame() {
   }
   if(play == false) {
     tick();
-    document.querySelector('.game').style.cursor = "url(gameImage/hammer_sprite.png), pointer";
     play = true; // change the play to true, when the player press play.
     timeCount = timeAmount / 1000;
     //timer.textContent = timeCount; // display the time.
@@ -115,7 +119,7 @@ function tick() {
     timer.textContent = timeCount;
     }
     if(timeCount <= 0){
-      clearTimeout();
+      clearTimeout(); 
     }else{
       tick();
     }

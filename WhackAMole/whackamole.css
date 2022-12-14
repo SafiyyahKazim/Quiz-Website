@@ -114,6 +114,13 @@ html {
     padding-right: 20px;
   }
 
+  p{
+    font-size: 30px;
+  }
+
+  .missed {
+    padding-right: 20px;
+  }
 
 
 /********************************nav bar******************************/
@@ -174,12 +181,24 @@ ul{
 /**********************************contentbox*************************************/
 .contentbox {
   width: 1000px;
-    height: 850px;
-    background-color: purple;
-    z-index: 3;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25px;
+  height: 930px;
+  z-index: 3;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  background-image: url(background/istockphoto-1153033854-612x612.jpg);
+  background-size: cover;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: both;
+  border-radius: 20px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
 }
