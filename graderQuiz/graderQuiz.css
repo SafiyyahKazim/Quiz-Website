@@ -94,7 +94,7 @@ ul{
 
 
 
-/*For the quiz*/
+/******************************For the quiz*****************************/
 .testholder{ 
     display: flex;
     position: absolute;
@@ -106,38 +106,24 @@ ul{
 .container {
     background-color: white;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 0 10px 2px skyblue;
+    border-style: solid;
+    border-color: blue;
     width: 1000px;
     height: 500px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    padding-left: 20px;
 }
 
-.quiz-header {
-    padding: 5px;
-    text-align: left;
-}
-
-#quiz h2{
+#quiz h1{
     padding: 10px;
-    font-size: 30px;
+    font-size: 35px;
     justify-content: center;
     color: black;
-}
-
-ul li{
-    font-size: 30px;
-    margin: 10px;
-    font-weight: bold;
-    color: black;
-}
-
-ul li label{
-    cursor: pointer;
 }
 
 #quiz button {
@@ -153,12 +139,26 @@ ul li label{
 }
 
 #quiz button:hover{
+    box-shadow: 0 0 5px goldenrod,
+                0 0 20px goldenrod;
     background-color: yellow;
+}
+
+.quizanswers {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin-right: 50px;
+}
+
+.quizanswers label, .quizanswers input{
+    margin-left: 5px;
 }
 
 
 
-/*Content box for grade choice*/
+
+/***************************Content box for grade choice****************************/
 .contentbox{ 
     display: flex;
     position: absolute;
@@ -175,7 +175,8 @@ ul li label{
     text-align: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 0 10px 2px skyblue;
+    border-style: solid;
+    border-color: yellow;
     width: 1000px;
     height: 500px;
     background-repeat: no-repeat;
