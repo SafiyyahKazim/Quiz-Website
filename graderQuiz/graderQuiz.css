@@ -9,6 +9,7 @@
 html {
     width: 100%;
     height: 100%;
+    background-image: url(background/watercolor-back-school-background-with-school-supplies_23-2149483508.webp);
     background-color: skyblue;
     /*There wont be any repeat for the background*/
     background-repeat: no-repeat;
@@ -28,7 +29,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:white;
+    color:black;
 }
 
 nav {
@@ -49,14 +50,14 @@ nav ul li a {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: black;
     border-radius: 20px;
     padding: 6px 15px;
 }
 
 nav ul li a:hover,
 nav ul li a#select{
-background: white;
+background: gray;
 color: black;
 }
 
@@ -67,14 +68,14 @@ ul{
 .classLogo {
     font-size: 20px;
     text-decoration: none;
-    color: white;
+    color: black;
     pointer-events: none;
     user-select: none;
     font-weight: bold;
 }
 
 .row {
-    color: white;
+    color: black;
     font-weight: bold;
     display: flex;
     position: absolute;
@@ -108,16 +109,16 @@ ul{
     text-align: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 0 10px 2px rgba(100, 100, 0.1);
+    box-shadow: 0 0 10px 2px skyblue;
     width: 1000px;
     height: 500px;
-    /*margin-left: 350px;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .quiz-header {
-    /*background-color: blueviolet;*/
-    /*top: 300px;*/
-    padding: 4rem;
+    padding: 5px;
     text-align: left;
 }
 
@@ -125,11 +126,14 @@ ul{
     padding: 10px;
     font-size: 30px;
     justify-content: center;
+    color: black;
 }
 
 ul li{
     font-size: 30px;
     margin: 10px;
+    font-weight: bold;
+    color: black;
 }
 
 ul li label{
@@ -150,4 +154,67 @@ ul li label{
 
 #quiz button:hover{
     background-color: yellow;
+}
+
+
+
+/*Content box for grade choice*/
+.contentbox{ 
+    display: flex;
+    position: absolute;
+    margin-top: 200px;
+    width: 90%; 
+    align-items: center;
+    justify-content: center;
+}
+
+.contentinside {
+    background-image: url(background/HD-wallpaper-back-to-school-apple-school-books-math.jpg);
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px skyblue;
+    width: 1000px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.gradeheader {
+    /*background-color: blueviolet;*/
+    /*top: 300px;*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    text-align: left;
+}
+
+#gradechoice button {
+    background-color: skyblue;
+    border-radius: 25px;
+    padding: 3px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+}
+
+#gradechoice button:hover{
+    background-color: yellow;
+}
+
+#gradechoice  h2{
+    font-size: 30px;
+    justify-content: center;
+}
+
+#gradechoice input {
+    font-size: 20px;
+    justify-content: center;
 }
