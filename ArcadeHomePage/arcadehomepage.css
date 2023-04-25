@@ -118,15 +118,17 @@ ul{
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
     border-radius: 15px;
 }
 
 .container .card:hover {
     height: 350px;
-    background-color: white;
+    background-image: radial-gradient(orange 15%, gold 60%);
     box-shadow: 0 0 5px yellow,
-                0 0 20px yellow;
+                0 0 20px yellow,
+                0 0 60px yellow,
+                0 0 100px yellow;
 }
 
 .container .card .gamephoto {
